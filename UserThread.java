@@ -1,11 +1,19 @@
 import java.net.Socket;
 
-public class UserThread {
+public class UserThread implements Runnable {
 
-    Socket socket;
+    Duplexer socket;
 
     public UserThread(Socket s) {
-        socket = s;
+        socket = new Duplexer(s);
+    }
+
+    public void run() {
+        
+    }
+
+    public void close() {
+        socket.close();
     }
     
 }

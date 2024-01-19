@@ -33,5 +33,15 @@ public class Duplexer {
             return null;
         }
     }
+
+    public void close() {
+        try {
+            input.close();
+            output.close();
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     
 }
